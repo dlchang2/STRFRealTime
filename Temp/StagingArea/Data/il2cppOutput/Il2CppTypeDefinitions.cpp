@@ -8822,8 +8822,11 @@ extern const Il2CppType TypeInferenceRuleAttribute_t471424957_1_0_0 = { (void*)1
 extern const Il2CppType U3CModuleU3E_t86524795_0_0_0 = { (void*)1269, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
 extern const Il2CppType U3CModuleU3E_t86524795_1_0_0 = { (void*)1269, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
-extern const Il2CppType TextChanger_t1566875829_0_0_0 = { (void*)1270, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const Il2CppType TextChanger_t1566875829_1_0_0 = { (void*)1270, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+extern const Il2CppType ElectrodeScript_t623926424_0_0_0 = { (void*)1270, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const Il2CppType ElectrodeScript_t623926424_1_0_0 = { (void*)1270, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+
+extern const Il2CppType TextChanger_t1566875829_0_0_0 = { (void*)1271, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const Il2CppType TextChanger_t1566875829_1_0_0 = { (void*)1271, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
 extern const Il2CppType GameObject_t4012695102_0_0_0;
 extern const Il2CppType GameObjectU5BU5D_t3499186955_0_0_1 = { (void*)&GameObject_t4012695102_0_0_0, 1, IL2CPP_TYPE_SZARRAY, 0, 0, 0 };
@@ -8873,7 +8876,7 @@ extern const Il2CppType TypeTagU5BU5D_t4081655900_0_0_0 = { (void*)&TypeTag_t173
 
 extern const Il2CppType ITrackingHandler_t663364710_0_0_0;
 extern const Il2CppType ITrackingHandlerU5BU5D_t4057050947_0_0_0 = { (void*)&ITrackingHandler_t663364710_0_0_0, 0, IL2CPP_TYPE_SZARRAY, 0, 0, 0 };
-extern const Il2CppType* const  g_Il2CppTypeTable[4892] = 
+extern const Il2CppType* const  g_Il2CppTypeTable[4894] = 
 {
 	&IEnumerator_1_t2320212868_0_0_0,
 	&Il2CppObject_0_0_0,
@@ -13710,6 +13713,8 @@ extern const Il2CppType* const  g_Il2CppTypeTable[4892] =
 	&TypeInferenceRuleAttribute_t471424957_1_0_0,
 	&U3CModuleU3E_t86524795_0_0_0,
 	&U3CModuleU3E_t86524795_1_0_0,
+	&ElectrodeScript_t623926424_0_0_0,
+	&ElectrodeScript_t623926424_1_0_0,
 	&TextChanger_t1566875829_0_0_0,
 	&TextChanger_t1566875829_1_0_0,
 	&SingleU5BU5D_t1219431280_0_0_1,

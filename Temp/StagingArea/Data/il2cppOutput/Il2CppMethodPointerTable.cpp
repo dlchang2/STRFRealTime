@@ -7657,6 +7657,10 @@ extern "C" void MathfInternal__cctor_m2600550988 ();
 extern "C" void TypeInferenceRuleAttribute__ctor_m1168575159 ();
 extern "C" void TypeInferenceRuleAttribute__ctor_m2173394041 ();
 extern "C" void TypeInferenceRuleAttribute_ToString_m318752778 ();
+extern "C" void ElectrodeScript__ctor_m4080670163 ();
+extern "C" void ElectrodeScript_Start_m3027807955 ();
+extern "C" void ElectrodeScript_Update_m3673585562 ();
+extern "C" void ElectrodeScript_updateColor_m1871747808 ();
 extern "C" void TextChanger__ctor_m1692915286 ();
 extern "C" void TextChanger_Start_m640053078 ();
 extern "C" void TextChanger_Update_m2667628407 ();
@@ -7664,7 +7668,7 @@ extern "C" void TextChanger_changeDropdown_m2894772800 ();
 extern "C" void TextChanger_erpUpdate_m988285922 ();
 extern "C" void TextChanger_updateErpString_m3471870367 ();
 extern "C" void TextChanger_debugPrint_m3227264026 ();
-extern const Il2CppMethodPointer g_MethodPointers[7653] = 
+extern const Il2CppMethodPointer g_MethodPointers[7657] = 
 {
 	Locale_GetText_m2389348044,
 	Locale_GetText_m2218462520,
@@ -15312,6 +15316,10 @@ extern const Il2CppMethodPointer g_MethodPointers[7653] =
 	TypeInferenceRuleAttribute__ctor_m1168575159,
 	TypeInferenceRuleAttribute__ctor_m2173394041,
 	TypeInferenceRuleAttribute_ToString_m318752778,
+	ElectrodeScript__ctor_m4080670163,
+	ElectrodeScript_Start_m3027807955,
+	ElectrodeScript_Update_m3673585562,
+	ElectrodeScript_updateColor_m1871747808,
 	TextChanger__ctor_m1692915286,
 	TextChanger_Start_m640053078,
 	TextChanger_Update_m2667628407,

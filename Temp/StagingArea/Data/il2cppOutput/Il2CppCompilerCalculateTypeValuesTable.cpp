@@ -800,6 +800,7 @@
 #include "UnityEngine_UnityEngine_Serialization_FormerlySeria581346955.h"
 #include "UnityEngine_UnityEngineInternal_TypeInferenceRules435505844.h"
 #include "UnityEngine_UnityEngineInternal_TypeInferenceRuleAt471424957.h"
+#include "AssemblyU2DCSharp_ElectrodeScript623926424.h"
 #include "AssemblyU2DCSharp_TextChanger1566875829.h"
 #include "mscorlib_U3CModuleU3E86524790.h"
 #include "mscorlib_System_Object837106420.h"
@@ -1145,7 +1146,7 @@
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-extern const int32_t g_FieldOffsetTable[4581] = 
+extern const int32_t g_FieldOffsetTable[4582] = 
 {
 	0,
 	0,
@@ -5719,6 +5720,7 @@ extern const int32_t g_FieldOffsetTable[4581] =
 	0,
 	0,
 	TypeInferenceRuleAttribute_t471424957::get_offset_of__rule_0(),
+	ElectrodeScript_t623926424::get_offset_of_colorMask_2(),
 	TextChanger_t1566875829::get_offset_of_erps_2(),
 	TextChanger_t1566875829::get_offset_of_pos_3(),
 	TextChanger_t1566875829::get_offset_of_prefab_4(),
@@ -5732,7 +5734,7 @@ extern const int32_t g_FieldOffsetTable[4581] =
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[1271] = 
+extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[1272] = 
 {
 	sizeof (U3CModuleU3E_t86524790), -1, 0, 0,
 	sizeof (Il2CppObject), -1, 0, 0,
@@ -7004,5 +7006,6 @@ extern const Il2CppTypeDefinitionSizes g_Il2CppTypeDefinitionSizesTable[1271] =
 	sizeof (TypeInferenceRules_t435505844)+ sizeof (Il2CppObject), sizeof(int32_t), 0, 0,
 	sizeof (TypeInferenceRuleAttribute_t471424957), -1, 0, 0,
 	sizeof (U3CModuleU3E_t86524795), -1, 0, 0,
+	sizeof (ElectrodeScript_t623926424), -1, 0, 0,
 	sizeof (TextChanger_t1566875829), -1, 0, 0,
 };

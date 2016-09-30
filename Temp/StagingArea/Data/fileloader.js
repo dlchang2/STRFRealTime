@@ -20,8 +20,8 @@ Module.expectedDataFileDownloads++;
     } else {
       throw 'using preloaded data can only be done on a web page or in a web worker';
     }
-    var PACKAGE_NAME = 'STRFRealTimeWebGLwithColorSize.data';
-    var REMOTE_PACKAGE_BASE = 'STRFRealTimeWebGLwithColorSize.data';
+    var PACKAGE_NAME = 'STRFRealTimeWebGLonlyColor.data';
+    var REMOTE_PACKAGE_BASE = 'STRFRealTimeWebGLonlyColor.data';
     if (typeof Module['locateFilePackage'] === 'function' && !Module['locateFile']) {
       Module['locateFile'] = Module['locateFilePackage'];
       Module.printErr('warning: you defined Module.locateFilePackage, that has been renamed to Module.locateFile (using your locateFilePackage for now)');
@@ -30,8 +30,8 @@ Module.expectedDataFileDownloads++;
                               Module['locateFile'](REMOTE_PACKAGE_BASE) :
                               ((Module['filePackagePrefixURL'] || '') + REMOTE_PACKAGE_BASE);
   
-      var REMOTE_PACKAGE_SIZE = 12648755;
-      var PACKAGE_UUID = 'b663c8c1-1b5e-4cde-85cf-78037a88e77e';
+      var REMOTE_PACKAGE_SIZE = 12649413;
+      var PACKAGE_UUID = '66e0d5a2-fbee-4e65-84be-bfa7b4e7710f';
     
     function fetchRemotePackage(packageName, packageSize, callback, errback) {
       var xhr = new XMLHttpRequest();
@@ -135,17 +135,17 @@ Module['FS_createPath']('/Managed/mono', '2.0', true, true);
       },
     };
 
-      new DataRequest(0, 20356, 0, 0).open('GET', '/globalgamemanagers');
-    new DataRequest(20356, 31268, 0, 0).open('GET', '/globalgamemanagers.assets');
-    new DataRequest(31268, 170000, 0, 0).open('GET', '/level0');
-    new DataRequest(170000, 170019, 0, 0).open('GET', '/methods_pointedto_by_uievents.xml');
-    new DataRequest(170019, 170134, 0, 0).open('GET', '/preserved_derived_types.xml');
-    new DataRequest(170134, 196874, 0, 0).open('GET', '/resources.assets');
-    new DataRequest(196874, 9674774, 0, 0).open('GET', '/sharedassets0.assets');
-    new DataRequest(9674774, 11063030, 0, 0).open('GET', '/Il2CppData/Metadata/global-metadata.dat');
-    new DataRequest(11063030, 12560402, 0, 0).open('GET', '/Resources/unity_default_resources');
-    new DataRequest(12560402, 12621130, 0, 0).open('GET', '/Resources/unity_builtin_extra');
-    new DataRequest(12621130, 12648755, 0, 0).open('GET', '/Managed/mono/2.0/machine.config');
+      new DataRequest(0, 20404, 0, 0).open('GET', '/globalgamemanagers');
+    new DataRequest(20404, 31412, 0, 0).open('GET', '/globalgamemanagers.assets');
+    new DataRequest(31412, 170144, 0, 0).open('GET', '/level0');
+    new DataRequest(170144, 170163, 0, 0).open('GET', '/methods_pointedto_by_uievents.xml');
+    new DataRequest(170163, 170328, 0, 0).open('GET', '/preserved_derived_types.xml');
+    new DataRequest(170328, 197068, 0, 0).open('GET', '/resources.assets');
+    new DataRequest(197068, 9674968, 0, 0).open('GET', '/sharedassets0.assets');
+    new DataRequest(9674968, 11063688, 0, 0).open('GET', '/Il2CppData/Metadata/global-metadata.dat');
+    new DataRequest(11063688, 12561060, 0, 0).open('GET', '/Resources/unity_default_resources');
+    new DataRequest(12561060, 12621788, 0, 0).open('GET', '/Resources/unity_builtin_extra');
+    new DataRequest(12621788, 12649413, 0, 0).open('GET', '/Managed/mono/2.0/machine.config');
 
     function processPackageData(arrayBuffer) {
       Module.finishedDataFileDownloads++;
@@ -166,10 +166,10 @@ Module['FS_createPath']('/Managed/mono', '2.0', true, true);
           DataRequest.prototype.requests["/Resources/unity_default_resources"].onload();
           DataRequest.prototype.requests["/Resources/unity_builtin_extra"].onload();
           DataRequest.prototype.requests["/Managed/mono/2.0/machine.config"].onload();
-          Module['removeRunDependency']('datafile_STRFRealTimeWebGLwithColorSize.data');
+          Module['removeRunDependency']('datafile_STRFRealTimeWebGLonlyColor.data');
 
     };
-    Module['addRunDependency']('datafile_STRFRealTimeWebGLwithColorSize.data');
+    Module['addRunDependency']('datafile_STRFRealTimeWebGLonlyColor.data');
   
     if (!Module.preloadResults) Module.preloadResults = {};
   

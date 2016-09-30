@@ -13,12 +13,14 @@
 #include <limits>
 #include <assert.h>
 
-// TextChanger
-struct TextChanger_t1566875829;
+// ElectrodeScript
+struct ElectrodeScript_t623926424;
 // UnityEngine.Renderer
 struct Renderer_t1092684080;
 // System.Object
 struct Il2CppObject;
+// TextChanger
+struct TextChanger_t1566875829;
 // System.String
 struct String_t;
 
@@ -27,10 +29,24 @@ struct String_t;
 #include "mscorlib_System_Array2840145358.h"
 #include "AssemblyU2DCSharp_U3CModuleU3E86524790.h"
 #include "AssemblyU2DCSharp_U3CModuleU3E86524790MethodDeclarations.h"
-#include "AssemblyU2DCSharp_TextChanger1566875829.h"
-#include "AssemblyU2DCSharp_TextChanger1566875829MethodDeclarations.h"
+#include "AssemblyU2DCSharp_ElectrodeScript623926424.h"
+#include "AssemblyU2DCSharp_ElectrodeScript623926424MethodDeclarations.h"
 #include "mscorlib_System_Void2779279689.h"
 #include "UnityEngine_UnityEngine_MonoBehaviour3012272455MethodDeclarations.h"
+#include "mscorlib_System_Single958209021.h"
+#include "UnityEngine_UnityEngine_Component2126946602MethodDeclarations.h"
+#include "UnityEngine_UnityEngine_Renderer1092684080MethodDeclarations.h"
+#include "UnityEngine_UnityEngine_Color1588175760MethodDeclarations.h"
+#include "UnityEngine_UnityEngine_Material1886596500MethodDeclarations.h"
+#include "UnityEngine_UnityEngine_Renderer1092684080.h"
+#include "UnityEngine_UnityEngine_Component2126946602.h"
+#include "UnityEngine_UnityEngine_Material1886596500.h"
+#include "mscorlib_System_String968488902.h"
+#include "mscorlib_ArrayTypes.h"
+#include "mscorlib_System_Int322847414787.h"
+#include "UnityEngine_UnityEngine_Color1588175760.h"
+#include "AssemblyU2DCSharp_TextChanger1566875829.h"
+#include "AssemblyU2DCSharp_TextChanger1566875829MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_Resources1543782994MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_TextAsset2461560304MethodDeclarations.h"
 #include "mscorlib_System_String968488902MethodDeclarations.h"
@@ -39,30 +55,24 @@ struct String_t;
 #include "mscorlib_System_Int322847414787MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_Quaternion1891715979MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_Object3878351788MethodDeclarations.h"
-#include "mscorlib_System_String968488902.h"
-#include "mscorlib_ArrayTypes.h"
-#include "mscorlib_System_Int322847414787.h"
 #include "UnityEngine_ArrayTypes.h"
 #include "UnityEngine_UnityEngine_GameObject4012695102.h"
 #include "UnityEngine_UnityEngine_Object3878351788.h"
 #include "UnityEngine_UnityEngine_TextAsset2461560304.h"
 #include "mscorlib_System_Char2778706699.h"
-#include "mscorlib_System_Single958209021.h"
 #include "UnityEngine_UnityEngine_Vector33525329789.h"
 #include "UnityEngine_UnityEngine_Quaternion1891715979.h"
 #include "UnityEngine_UnityEngine_Input1593691127MethodDeclarations.h"
-#include "UnityEngine_UnityEngine_Component2126946602MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_Transform284553113MethodDeclarations.h"
 #include "UnityEngine_UnityEngine_GameObject4012695102MethodDeclarations.h"
-#include "UnityEngine_UnityEngine_Renderer1092684080MethodDeclarations.h"
-#include "UnityEngine_UnityEngine_Color1588175760MethodDeclarations.h"
-#include "UnityEngine_UnityEngine_Material1886596500MethodDeclarations.h"
 #include "mscorlib_System_Boolean211005341.h"
 #include "UnityEngine_UnityEngine_Transform284553113.h"
-#include "UnityEngine_UnityEngine_Renderer1092684080.h"
-#include "UnityEngine_UnityEngine_Material1886596500.h"
-#include "UnityEngine_UnityEngine_Color1588175760.h"
 
+// !!0 UnityEngine.Component::GetComponent<System.Object>()
+extern "C"  Il2CppObject * Component_GetComponent_TisIl2CppObject_m267839954_gshared (Component_t2126946602 * __this, const MethodInfo* method);
+#define Component_GetComponent_TisIl2CppObject_m267839954(__this, method) ((  Il2CppObject * (*) (Component_t2126946602 *, const MethodInfo*))Component_GetComponent_TisIl2CppObject_m267839954_gshared)(__this, method)
+// !!0 UnityEngine.Component::GetComponent<UnityEngine.Renderer>()
+#define Component_GetComponent_TisRenderer_t1092684080_m500377675(__this, method) ((  Renderer_t1092684080 * (*) (Component_t2126946602 *, const MethodInfo*))Component_GetComponent_TisIl2CppObject_m267839954_gshared)(__this, method)
 // !!0 UnityEngine.GameObject::GetComponent<System.Object>()
 extern "C"  Il2CppObject * GameObject_GetComponent_TisIl2CppObject_m441016515_gshared (GameObject_t4012695102 * __this, const MethodInfo* method);
 #define GameObject_GetComponent_TisIl2CppObject_m441016515(__this, method) ((  Il2CppObject * (*) (GameObject_t4012695102 *, const MethodInfo*))GameObject_GetComponent_TisIl2CppObject_m441016515_gshared)(__this, method)
@@ -73,6 +83,59 @@ extern "C"  Il2CppObject * GameObject_GetComponent_TisIl2CppObject_m441016515_gs
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void ElectrodeScript::.ctor()
+extern "C"  void ElectrodeScript__ctor_m4080670163 (ElectrodeScript_t623926424 * __this, const MethodInfo* method)
+{
+	{
+		MonoBehaviour__ctor_m2022291967(__this, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void ElectrodeScript::Start()
+extern "C"  void ElectrodeScript_Start_m3027807955 (ElectrodeScript_t623926424 * __this, const MethodInfo* method)
+{
+	{
+		return;
+	}
+}
+// System.Void ElectrodeScript::Update()
+extern "C"  void ElectrodeScript_Update_m3673585562 (ElectrodeScript_t623926424 * __this, const MethodInfo* method)
+{
+	{
+		return;
+	}
+}
+// System.Void ElectrodeScript::updateColor(System.Single)
+extern const MethodInfo* Component_GetComponent_TisRenderer_t1092684080_m500377675_MethodInfo_var;
+extern Il2CppCodeGenString* _stringLiteral2785059396;
+extern const uint32_t ElectrodeScript_updateColor_m1871747808_MetadataUsageId;
+extern "C"  void ElectrodeScript_updateColor_m1871747808 (ElectrodeScript_t623926424 * __this, float ___amplitude0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodIntialized;
+	if (!s_Il2CppMethodIntialized)
+	{
+		il2cpp_codegen_initialize_method (ElectrodeScript_updateColor_m1871747808_MetadataUsageId);
+		s_Il2CppMethodIntialized = true;
+	}
+	{
+		Renderer_t1092684080 * L_0 = Component_GetComponent_TisRenderer_t1092684080_m500377675(__this, /*hidden argument*/Component_GetComponent_TisRenderer_t1092684080_m500377675_MethodInfo_var);
+		Material_t1886596500 * L_1 = Renderer_get_material_m2720864603(L_0, /*hidden argument*/NULL);
+		Int32U5BU5D_t1809983122* L_2 = __this->get_colorMask_2();
+		int32_t L_3 = 0;
+		float L_4 = ___amplitude0;
+		Int32U5BU5D_t1809983122* L_5 = __this->get_colorMask_2();
+		int32_t L_6 = 1;
+		float L_7 = ___amplitude0;
+		Int32U5BU5D_t1809983122* L_8 = __this->get_colorMask_2();
+		int32_t L_9 = 2;
+		float L_10 = ___amplitude0;
+		Color_t1588175760  L_11;
+		memset(&L_11, 0, sizeof(L_11));
+		Color__ctor_m103496991(&L_11, ((float)((float)(1.0f)-(float)((float)((float)(((float)((float)((L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_3))))))*(float)L_4)))), ((float)((float)(1.0f)-(float)((float)((float)(((float)((float)((L_5)->GetAt(static_cast<il2cpp_array_size_t>(L_6))))))*(float)L_7)))), ((float)((float)(1.0f)-(float)((float)((float)(((float)((float)((L_8)->GetAt(static_cast<il2cpp_array_size_t>(L_9))))))*(float)L_10)))), /*hidden argument*/NULL);
+		Material_SetColor_m1918430019(L_1, _stringLiteral2785059396, L_11, /*hidden argument*/NULL);
+		return;
+	}
+}
 // System.Void TextChanger::.ctor()
 extern "C"  void TextChanger__ctor_m1692915286 (TextChanger_t1566875829 * __this, const MethodInfo* method)
 {

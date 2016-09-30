@@ -1,5 +1,6 @@
 <linker>
 <assembly fullname="Assembly-CSharp">
+<type fullname="ElectrodeScript" preserve="all"/>
 <type fullname="TextChanger" preserve="all"/>
 </assembly>
 </linker>
