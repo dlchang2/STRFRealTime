@@ -143,22 +143,22 @@ var spec3D = {
       .on('touchend',this.handleTrack)
   },
 
-  // onResize_: function() {
-  //   console.log('onResize_');
-  //   var canvas = $('#spectrogram')[0];
-  //   spec3D.canvas = canvas;
+   onResize_: function() {
+     console.log('onResize_');
+     var canvas = $('#spectrogram')[0];
+     spec3D.canvas = canvas;
 
-  //   // access sibling or parent elements here
-  //   canvas.width = $(window).width();
-  //   canvas.height = $(window).height();
+     // access sibling or parent elements here
+     canvas.width = $(window).width();
+     canvas.height = $(window).height();
 
-  //   // Also size the legend canvas.
-  //   var legend = $('#legend')[0];
-  //   legend.width = $(window).width();
-  //   legend.height = $(window).height() - 158;
+     // Also size the legend canvas.
+     var legend = $('#legend')[0];
+     legend.width = $(window).width();
+     legend.height = $(window).height() - 158;
 
-  //   spec3D.drawLegend_();
-  // },
+     spec3D.drawLegend_();
+   },
 
   draw_: function() {
     if (!spec3D.isRendering) {

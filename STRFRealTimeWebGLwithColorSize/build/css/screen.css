@@ -570,3 +570,28 @@ canvas {
 canvas {
 	border: 2px solid blue;
 }*/
+#introscreen {
+	/*visibility: hidden;*/
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+        margin-top: 80px;	
+	height: 800px;
+	width: 100%;
+	overflow: scroll;
+	/*background-color: #000;*/
+	color: #ffffff;
+	z-index: 99;
+	background: rgba(0, 0, 0, 0.25);
+}
+#introscreen p, ul, li {
+	font-size: 18px;
+	font-family: Maven Pro;
+}
+#introscreen a {
+	color: #777777;
+}
+#about {
+	cursor: pointer;
+}
