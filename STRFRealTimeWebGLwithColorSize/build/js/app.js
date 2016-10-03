@@ -886,7 +886,7 @@
                     case w:
                     case b:
                         selectedCategory = all;
-                        selectedScaling = 0.03;
+                        selectedScaling = 0.003;
                         for (this.analyser.smoothingTimeConstant = 0,this.analyser.getByteFrequencyData(freqByteData), i = 0; i < 36; i++) freqDataBuffer[i + 1] = freqDataBuffer[0];
                         for (freqDataBuffer[0] = freqByteData, c = 0; c < selectedCategory.length; c++) {
                             channelNum = selectedCategory[c]-1;
@@ -1123,7 +1123,7 @@
                     onResize_: function() {
                         console.log("onResize_");
                         var e = $("#spectrogram")[0];
-                        g.canvas = e, e.width = $(window).width(), e.height = 510;//$(window).height();
+                        g.canvas = e, e.width = $(window).width(), e.height = $(window).height();
                         var t = $("#legend")[0];
                         t.width = $(window).width(), t.height = $(window).height() - 158, g.drawLegend_()
                     },
@@ -1136,7 +1136,12 @@
                         var e = $("#legend")[0],
                             t = e.getContext("2d"),
                             n = e.width - 10,
-                            fixed = 500;
+                            fixed = $("#legend").height();
+			    fixed = 500;
+			    //fixed = $("#legend").height();
+			    console.log(fixed);
+			    console.log(g.freqToY(2e4));
+			    console.log(g.freqToY(20));
 
                         t.fillStyle = "#FFFFFF", t.font = "14px Roboto", t.textAlign = "right", t.textBaseline = "middle", t.fillText("20,000 Hz -", n, fixed - g.freqToY(2e4)), t.fillText("2,000 Hz -", n, fixed - g.freqToY(2e3)), t.fillText("200 Hz -", n, fixed - g.freqToY(200)), t.fillText("20 Hz -", n, fixed - g.freqToY(20))
                     },
@@ -1154,6 +1159,7 @@
                     freqToY: function(e) {
                         var t = f.log2lin(e),
                             n = $("#spectrogram").height(),
+			    n = 500,
                             r = g.padding,
                             i = (t - g.freqStart) / (g.freqEnd - g.freqStart);
                         return g.padding + i * (n - 2 * r)
