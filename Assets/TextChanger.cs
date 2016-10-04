@@ -32,8 +32,29 @@ public class TextChanger : MonoBehaviour {
 			pos = new Vector3 (-1.0f*float.Parse (tmp [4]), float.Parse (tmp [5]), float.Parse (tmp [6]));
 			phonemeSelectivity[e] = int.Parse (psiTxt [e]);
 			sigElecs [e] = int.Parse (sigElecsTxt [e]);
-			if (sigElecs[e]==1)
-				allElecs[e] = (GameObject)Instantiate (prefab, pos, Quaternion.identity);
+			if (sigElecs [e] == 1) {
+				allElecs [e] = (GameObject)Instantiate (prefab, pos, Quaternion.identity);
+				switch (phonemeSelectivity [e]) {
+				case 1: 
+					allElecs [e].GetComponent<ElectrodeScript> ().r = 1; allElecs [e].GetComponent<ElectrodeScript> ().g = 0; allElecs [e].GetComponent<ElectrodeScript> ().b = 0;
+					break;
+				case 2: 
+					allElecs [e].GetComponent<ElectrodeScript> ().r = 0; allElecs [e].GetComponent<ElectrodeScript> ().g = 0; allElecs [e].GetComponent<ElectrodeScript> ().b = 1;
+					break;
+				case 3: 
+					allElecs [e].GetComponent<ElectrodeScript> ().r = 0; allElecs [e].GetComponent<ElectrodeScript> ().g = 1; allElecs [e].GetComponent<ElectrodeScript> ().b = 0;
+					break;
+				case 4: 
+					allElecs [e].GetComponent<ElectrodeScript> ().r = 0; allElecs [e].GetComponent<ElectrodeScript> ().g = 0; allElecs [e].GetComponent<ElectrodeScript> ().b = 1;
+					break;
+				case 5: 
+					allElecs [e].GetComponent<ElectrodeScript> ().r = 1; allElecs [e].GetComponent<ElectrodeScript> ().g = 1; allElecs [e].GetComponent<ElectrodeScript> ().b = 0;
+					break;
+				case 6: 
+					allElecs [e].GetComponent<ElectrodeScript> ().r = 1; allElecs [e].GetComponent<ElectrodeScript> ().g = 0; allElecs [e].GetComponent<ElectrodeScript> ().b = 1;
+					break;
+				}
+			}			
 		}
 		erps = new float[256];
 	}
@@ -52,33 +73,12 @@ public class TextChanger : MonoBehaviour {
 				scaleFactor.y = 0.1f*erps [e];
 				scaleFactor.z = 0.1f*erps [e];
 				allElecs [e].transform.localScale = scaleFactor;
-
-				switch (phonemeSelectivity [e]) {
-				case 1: 
-					allElecs [e].GetComponent<Renderer> ().material.SetColor ("_Color", new Color (1.0f, 1.0f - erps [e], 1.0f - erps [e]));
-					break;
-				case 2: 
-					allElecs [e].GetComponent<Renderer> ().material.SetColor ("_Color", new Color (1.0f - erps [e], 1.0f - erps [e], 1.0f));
-					break;
-				case 3: 
-					allElecs [e].GetComponent<Renderer> ().material.SetColor ("_Color", new Color (1.0f - erps [e], 1.0f, 1.0f - erps [e]));
-					break;
-				case 4: 
-					allElecs [e].GetComponent<Renderer> ().material.SetColor ("_Color", new Color (1.0f, 1.0f - erps [e], 1.0f));
-					break;
-				case 5: 
-					allElecs [e].GetComponent<Renderer> ().material.SetColor ("_Color", new Color (1.0f, 1.0f, 1.0f - erps [e]));
-					break;
-				case 6: 
-					allElecs [e].GetComponent<Renderer> ().material.SetColor ("_Color", new Color (1.0f - erps [e], 1.0f, 1.0f));
-					break;
-				}
+				allElecs [e].GetComponent<ElectrodeScript> ().updateColor (erps [e]);
 			}
 		}
 	}
 
 	void changeDropdown(int i){
-		
 	}
 
 	void erpUpdate(string s){

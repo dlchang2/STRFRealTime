@@ -851,7 +851,13 @@
                 var x = s.createBuffer();
                 this.sonogram3DIBO = x, s.bindBuffer(s.ELEMENT_ARRAY_BUFFER, x), s.bufferData(s.ELEMENT_ARRAY_BUFFER, _, s.STATIC_DRAW), this.frequencyShader = o3djs.shader.loadFromURL(s, "bin/shaders/common-vertex.shader", "bin/shaders/frequency-fragment.shader"), this.waveformShader = o3djs.shader.loadFromURL(s, "bin/shaders/common-vertex.shader", "bin/shaders/waveform-fragment.shader"), this.sonogramShader = o3djs.shader.loadFromURL(s, "bin/shaders/common-vertex.shader", "bin/shaders/sonogram-fragment.shader"), this.has3DVisualizer && (this.sonogram3DShader = o3djs.shader.loadFromURL(s, "bin/shaders/sonogram-vertex.shader", "bin/shaders/sonogram-fragment.shader")), console.log("this.sonogramShader", this.sonogramShader), console.log("this.sonogram3DShader", this.sonogram3DShader)
             }, AnalyserView.prototype.initByteBuffer = function() {
-                console.log('HERE');
+                var vowels = [ 3,4,6,7, 9  ,  15   , 33  ,  40  ,  42  ,  43  ,  49  ,  52   , 53  ,  55  ,  56  ,  57  ,  60   , 63  ,  66  ,  70 ,   72  ,  77   , 99 ,  116 , 118 ,  132  , 133 ,  134  , 148 ,  151 ,  152   ,211 ,  213  , 227 ,  228  , 229 ,  249];
+                var glides = [ 41  ,  46  ,  79  ,  96  , 139 ,  140 ,  159  , 175 ,  176  , 210   ,221 ,  225  , 236 ,  241  , 255];
+                var fricatives = [5   , 17    ,21  ,  25 ,   26  ,  54  ,  84 ,   90 ,  128 ,  144 ,  170,   196];
+                var unvoicedPlosives = [14,20,22,47  , 50  ,  67   , 68   , 71  ,  87  , 102];
+                var voicedPlosives = [19  ,  36   , 37    ,38   , 39   , 61   , 62    ,69    ,73  ,  85  ,  86   , 88  , 101 ,  103  , 111   ,112 ,  119 ,  149  , 150   ,164 ,  165 ,  167 ,  180   ,181];
+                var nasals = [23  ,  24   ,135,   147 ,  251];
+                var all = [  3,   4,   5,   6,   7,   8,   9,  14,  15,  17,  19,  20,  21, 22,  23,  24,  25,  26,  33,  36,  37,  38,  39,  40,  42,  43,47,  49,  50,  52,  53,  54,  55,  56,  57,  60,  61,  62,  63,66,  67,  68,  69,  70,  71,  72,  73,  77,  83,  84,  85,  86, 87,  88,  90,  99, 100, 101, 102, 103, 111, 112, 115, 116, 117,118, 119, 127, 128, 129, 131, 132, 133, 134, 135, 144, 147, 148,149, 150, 151, 152, 164, 165, 166, 167, 170, 180, 181, 182, 196,197, 198, 211, 212, 213, 227, 228, 229, 249, 250, 251];
                 var e = this.gl,
                     n = this.TEXTURE_HEIGHT;
                 if (!this.freqByteData || this.freqByteData.length != this.analyser.frequencyBinCount) {
@@ -870,15 +876,7 @@
                 (this.has3DVisualizer || e != b) && (this.analysisType = e)
             }, AnalyserView.prototype.analysisType = function() {
                 return this.analysisType
-            }, AnalyserView.prototype.doFrequencyAnalysis = function(e) {
-                vowels = [ 3,4,6,7, 9  ,  15   , 33  ,  40  ,  42  ,  43  ,  49  ,  52   , 53  ,  55  ,  56  ,  57  ,  60   , 63  ,  66  ,  70 ,   72  ,  77   , 99 ,  116 , 118 ,  132  , 133 ,  134  , 148 ,  151 ,  152   ,211 ,  213  , 227 ,  228  , 229 ,  249];
-                glides = [ 41  ,  46  ,  79  ,  96  , 139 ,  140 ,  159  , 175 ,  176  , 210   ,221 ,  225  , 236 ,  241  , 255];
-                fricatives = [5   , 17    ,21  ,  25 ,   26  ,  54  ,  84 ,   90 ,  128 ,  144 ,  170,   196];
-                unvoicedPlosives = [14,20,22,47  , 50  ,  67   , 68   , 71  ,  87  , 102]
-                voicedPlosives = [19  ,  36   , 37    ,38   , 39   , 61   , 62    ,69    ,73  ,  85  ,  86   , 88  , 101 ,  103  , 111   ,112 ,  119 ,  149  , 150   ,164 ,  165 ,  167 ,  180   ,181];
-                nasals = [23  ,  24   ,135,   147 ,  251];
-                all = [  3,   4,   5,   6,   7,   8,   9,  14,  15,  17,  19,  20,  21, 22,  23,  24,  25,  26,  33,  36,  37,  38,  39,  40,  42,  43,47,  49,  50,  52,  53,  54,  55,  56,  57,  60,  61,  62,  63,66,  67,  68,  69,  70,  71,  72,  73,  77,  83,  84,  85,  86, 87,  88,  90,  99, 100, 101, 102, 103, 111, 112, 115, 116, 117,118, 119, 127, 128, 129, 131, 132, 133, 134, 135, 144, 147, 148,149, 150, 151, 152, 164, 165, 166, 167, 170, 180, 181, 182, 196,197, 198, 211, 212, 213, 227, 228, 229, 249, 250, 251];
-                
+            }, AnalyserView.prototype.doFrequencyAnalysis = function(e) {           
                 switch (freqByteData = this.freqByteData, this.analysisType) {
                     case y:
                         this.analyser.smoothingTimeConstant = .75, this.analyser.getByteFrequencyData(freqByteData);
@@ -886,13 +884,13 @@
                     case w:
                     case b:
                         selectedCategory = all;
-                        selectedScaling = 0.03;
+                        selectedScaling = 0.00;
                         for (this.analyser.smoothingTimeConstant = 0,this.analyser.getByteFrequencyData(freqByteData), i = 0; i < 36; i++) freqDataBuffer[i + 1] = freqDataBuffer[0];
                         for (freqDataBuffer[0] = freqByteData, c = 0; c < selectedCategory.length; c++) {
                             channelNum = selectedCategory[c]-1;
                             for (gridResponse[channelNum] = 0, t = 0; t < 37; t++)
-                                for (f = 30; f < 185; f++) gridResponse[channelNum] += freqDataBuffer[t][f] * channelStrfs[channelNum][t][f];
-                                gridResponse[channelNum] = selectedScaling*gridResponse[channelNum];
+                                for (f = 0; f < 185; f++) gridResponse[channelNum] += freqDataBuffer[t][f] * channelStrfs[channelNum][t][f];
+                                gridResponse[channelNum] = 0.0;//selectedScaling*gridResponse[channelNum];
                         }
                         break;
                     case v:
