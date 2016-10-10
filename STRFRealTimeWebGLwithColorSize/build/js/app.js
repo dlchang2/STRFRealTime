@@ -1119,11 +1119,25 @@
                         n.setAnalyserNode(t), n.initByteBuffer(), g.player = e, g.analyserView = n, $("#spectrogram").on("mousedown", this.handleTrack).on("touchstart", this.handleTrack).on("mouseup", this.handleTrack).on("touchend", this.handleTrack)
                     },
                     onResize_: function() {
-                        console.log("onResize_");
+                        //console.log("onResize_");
                         var e = $("#spectrogram")[0];
                         g.canvas = e, e.width = $(window).width(), e.height = 510;//$(window).height();
                         var t = $("#legend")[0];
-                        t.width = $(window).width(), t.height = $(window).height() - 158, g.drawLegend_()
+                        t.width = $(window).width(), t.height = $(window).height() - 158, g.drawLegend_();
+
+                        console.log($(window).height()); //so buttons stick to the bottom until some minimum height, after which positioning becomes absolute
+                        var pos = 1053;
+                        if ($(window).height() > pos) {
+                            $('.music-box__buttons').css({
+                                bottom: '0%',
+                                top: 'auto'
+                            });
+                            } else {
+                                $('.music-box__buttons').css({
+                                  top: 915,
+                                  bottom: 'auto'
+                                });
+                            }
                     },
                     draw_: function() {
                         return g.isRendering ? void setTimeout(function() {

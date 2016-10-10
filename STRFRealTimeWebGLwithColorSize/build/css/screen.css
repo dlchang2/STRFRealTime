@@ -337,7 +337,9 @@ html {
 }
 .music-box__buttons {
     position: absolute;
-    top: 915px;
+    /*top: 915px;*/
+    bottom:0%;
+    /*min-height: 100px;*/
     z-index: 100;
     white-space: nowrap;
     background-color: #141414;
@@ -536,4 +538,38 @@ canvas {
 .music-box__modal__record-rings:nth-child(5) {
     -webkit-animation-delay: 1.2s;
     animation-delay: 1.2s
+}
+#introscreen {
+    /*visibility: hidden;*/
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+        margin-top: 80px;   
+    height: 800px;
+    width: 100%;
+    overflow: scroll;
+    /*background-color: #000;*/
+    color: #ffffff;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.25);
+}
+#introscreen p, ul, li {
+    font-size: 18px;
+    font-family: Maven Pro;
+}
+#introscreen a {
+    color: #777777;
+}
+#about {
+    font-size: 50px;
+    cursor: pointer;
+    color:#FFFFFF;
+}
+#title-banner{
+    font-size: 50px;
+    white-space: nowrap;
+    color: #666666;
+    font-family: Maven Pro;
+    text-align:center;
 }

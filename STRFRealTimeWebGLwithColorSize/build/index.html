@@ -11,10 +11,40 @@
       <link rel="stylesheet" href="../TemplateData/style.css">
       <link rel="shortcut icon" href="../TemplateData/favicon.ico" />
       <script src="../TemplateData/UnityProgress.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><script type="text/javascript" src="js/bundle.js"></script><script type="text/javascript" src="js/app.js"></script>
+      <script>
+        /* For toggling the help screen */
+        $(document).ready(function() {
+          $("#about").click(function(){ 
+            $("#introscreen").fadeToggle();
+          });
+        });
+      </script>
    </head>
    <div class="wrap">
    <body>
-    <img id="CortexVortex" src="CortexVortex.png"></img>
+    <div id="introscreen" style="visible: hidden">
+       <div style="float:left"></div>
+       <div style="width:70%; margin: 0 auto;"><p>This interactive brain viewer allows you to see how different speech sounds are represented in the human brain. The top panel shows the brain from one participant along with electrodes from a 256-channel electrocorticography grid implanted as part of surgical treatment for epilepsy. The bottom panel shows a running spectrogram of sound from either the microphone or pre-recorded sounds. The spectrogram shows what frequencies make up a sound from low at the bottom to high at the top, and also shows how they change over time (from left to right). </p><br/>
+         <p>After you click one of the buttons, brain responses are calculated based on models of how the brain responds to the spectrotemporal information present in speech.  These responses are modeled based on real data from one participant who listened to approximately 1 hour of naturally spoken English sentences.  The size of the electrode will increase with the amount of activity in the underlying brain area (<span style="font-size: 24px">bigger</span>=more active). Electrodes that respond to different classes of phonemes are colored differently. </p><br/>
+         <ul>
+         <li>Electrodes that respond most strongly to <span style="color:rgb(255,0,0)">vowels</span> are colored <span style="color:rgb(255,0,0)">red</span>. </li>
+         <li> Electrodes that respond most strongly to <span style="color: rgb(0,255,0)">fricative</span> phonemes (such as "f", "s", "sh", "ch", and "z") are colored <span style="color:rgb(0,255,0)">green</span>. </li>
+         <li> <span style="color:rgb(0,255,255)">Nasals</span> ("n", "m", or "ng") are <span style="color:rgb(0,255,255)">cyan</span>. </li>
+         <li> <span style="color:rgb(255,255,0)">Voiced plosives</span> ("b", "d", "g") are in <span style="color:rgb(255,255,0)">yellow</span>, and</li>
+         <li> <span style="color:rgb(255,0,255)">unvoiced plosives</span> ("p", "t", "k") are in <span style="color:rgb(255,0,255)">purple</span>.</li>
+         <li> <span style="background-color: #e3e3e3; color:rgb(0,0,255)">Liquids and glides</span> ("r", "l", "w", "y") are in <span style="background-color: #e3e3e3; color:rgb(0,0,255)">dark blue</span>.</li> 
+       </ul><br/>
+         <p>Click the microphone button to see predicted responses to your own voice in real time, or click the other buttons to listen to previously recorded example sounds.</p><br/>
+         <p>For more methodological details, see the <a href="summary.html">short summary here</a>.</p><br/>
+       <p>Developed by David Chang, Liberty Hamilton, and Morgan Lee at the <a href="http://changlab.ucsf.edu">Laboratory of Edward Chang at UCSF</a>. Special thanks to Jeramy Morrill and Boris Smus for developing the original <a href="https://musiclab.chromeexperiments.com/Spectrogram">Spectrogram code</a>, and a big thank you to the participants who volunteered their time and made this research possible. Participants provided written informed consent, and all procedures were approved by the UCSF Institutional Review Board.</p></div><div></div>
+   </div>
+    <div class="container">
+       <div></div>
+       <div id="title-banner">NeuroSpeech Player</div>
+       <div id="about" style="float: right"><h2>&nbsp;&nbsp;&nbsp;?</h2></div>
+     </div>
     <div class="template">
     <div class="template-wrap clear">
       <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="400px" width="640px"></canvas>
@@ -69,9 +99,6 @@
             <div class="icon icon-wine"></div>
          </div>
       </div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><script type="text/javascript" src="js/bundle.js"></script><script type="text/javascript" src="js/app.js"></script>
-   
-
-
+     
 </body>
 </html>
