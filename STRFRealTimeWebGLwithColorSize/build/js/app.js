@@ -1120,22 +1120,24 @@
                         n.setAnalyserNode(t), n.initByteBuffer(), g.player = e, g.analyserView = n, $("#spectrogram").on("mousedown", this.handleTrack).on("touchstart", this.handleTrack).on("mouseup", this.handleTrack).on("touchend", this.handleTrack)
                     },
                     onResize_: function() {
-                        //console.log("onResize_");
+                        //console.log("onResize_"); need to fiddle with this section
                         var e = $("#spectrogram")[0];
-                        g.canvas = e, e.width = Math.max($(window).width(),800), e.height = 510;//$(window).height();
+                        g.canvas = e, e.width = Math.max($(window).width(),800), e.height = 900;//$(window).height();
                         var t = $("#legend")[0];
                         t.width = $(window).width(), t.height = $(window).height() - 158, g.drawLegend_();
 
                         console.log($(window).height()); //so buttons stick to the bottom until some minimum height, after which positioning becomes absolute
-                        var pos = 1053;
+                        var pos = 850;
                         if ($(window).height() > pos) {
                             $('.music-box__buttons').css({
                                 bottom: '0%',
-                                top: 'auto'
+                                top: 'auto',
+                                position: 'auto'
                             });
                             } else {
                                 $('.music-box__buttons').css({
-                                  top: 915,
+                                  position: 'absolute',
+                                  top: $('.music-box__buttons').position().top,
                                   bottom: 'auto'
                                 });
                             }
@@ -1149,7 +1151,7 @@
                         var e = $("#legend")[0],
                             t = e.getContext("2d"),
                             n = e.width - 15,
-                            fixed = 520; //this seems arbitrary
+                            fixed = 480; //this seems arbitrary
 
                         t.fillStyle = "#FFFFFF", t.font = "14px Roboto", t.textAlign = "right", t.textBaseline = "middle", t.fillText("20,000 Hz -", n, fixed - g.freqToY(2e4)), t.fillText("2,000 Hz -", n, fixed - g.freqToY(2e3)), t.fillText("200 Hz -", n, fixed - g.freqToY(200)), t.fillText("20 Hz -", n, fixed - g.freqToY(20))
                     },

@@ -400,14 +400,14 @@ canvas {
 
 #legend{position:absolute;
     display: block;
-    top: 375px;}
+    top: 200px;}
 
 #spectrogram{ /*was canvas*/
     /*bottom: 11.8rem;*/
     position:relative;
-    top: 375px;
+    top: 200px;
     left: 0;
-    height: 300px; /*30%;*//*calc(100% - 11.8rem);*/
+    height: 250px; /*30%;*//*calc(100% - 11.8rem);*/
     padding-top:10px;
     margin-top:20px;
     min-width:700px;
@@ -556,20 +556,20 @@ canvas {
     background: rgba(0, 0, 0, 0.25);
 }
 #introscreen p, ul, li {
-    font-size: 18px;
+    font-size: 14px;
     font-family: Maven Pro;
-    line-height: 30px;
+    line-height: 22px;
 
 }
 #introscreen a {
     color: #777777;
 }
 #about {
-    font-size: 35px;
+    font-size: 30px;
     cursor: pointer;
     color:#222222;
     float: right; 
-    padding-bottom:15px;
+    padding:20px;
 }
 
 #logo{
@@ -582,9 +582,9 @@ canvas {
 }
 #title-banner{
     padding-top:18px;
-    font-size: 30px;
-    letter-spacing:25px;
-    white-space: nowrap;
+    font-size: 25px;
+    letter-spacing:8px;
+    /*white-space: nowrap;*/
     color: #333333;
     font-family: Maven Pro;
     text-align:center;
