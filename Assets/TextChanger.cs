@@ -37,34 +37,34 @@ public class TextChanger : MonoBehaviour {
 				allElecs [e] = (GameObject)Instantiate (prefab, pos, Quaternion.identity);
 				switch (phonemeSelectivity [e]) {
 				case 1: 
-					allElecs [e].GetComponent<ElectrodeScript> ().r = 1;
-					allElecs [e].GetComponent<ElectrodeScript> ().g = 0;
-					allElecs [e].GetComponent<ElectrodeScript> ().b = 0;
+					allElecs [e].GetComponent<ElectrodeScript> ().r = 0;
+					allElecs [e].GetComponent<ElectrodeScript> ().g = 1;
+					allElecs [e].GetComponent<ElectrodeScript> ().b = 1;
 					break;
 				case 2: 
-					allElecs [e].GetComponent<ElectrodeScript> ().r = 0;
-					allElecs [e].GetComponent<ElectrodeScript> ().g = 0;
-					allElecs [e].GetComponent<ElectrodeScript> ().b = 1;
+					allElecs [e].GetComponent<ElectrodeScript> ().r = 1;
+					allElecs [e].GetComponent<ElectrodeScript> ().g = 1;
+					allElecs [e].GetComponent<ElectrodeScript> ().b = 0;
 					break;
 				case 3: 
-					allElecs [e].GetComponent<ElectrodeScript> ().r = 0;
-					allElecs [e].GetComponent<ElectrodeScript> ().g = 1;
-					allElecs [e].GetComponent<ElectrodeScript> ().b = 0;
+					allElecs [e].GetComponent<ElectrodeScript> ().r = 1;
+					allElecs [e].GetComponent<ElectrodeScript> ().g = 0;
+					allElecs [e].GetComponent<ElectrodeScript> ().b = 1;
 					break;
 				case 4: 
-					allElecs [e].GetComponent<ElectrodeScript> ().r = 0;
-					allElecs [e].GetComponent<ElectrodeScript> ().g = 0;
-					allElecs [e].GetComponent<ElectrodeScript> ().b = 1;
-					break;
-				case 5: 
 					allElecs [e].GetComponent<ElectrodeScript> ().r = 1;
 					allElecs [e].GetComponent<ElectrodeScript> ().g = 1;
 					allElecs [e].GetComponent<ElectrodeScript> ().b = 0;
 					break;
-				case 6: 
-					allElecs [e].GetComponent<ElectrodeScript> ().r = 1;
+				case 5: 
+					allElecs [e].GetComponent<ElectrodeScript> ().r = 0;
 					allElecs [e].GetComponent<ElectrodeScript> ().g = 0;
 					allElecs [e].GetComponent<ElectrodeScript> ().b = 1;
+					break;
+				case 6: 
+					allElecs [e].GetComponent<ElectrodeScript> ().r = 0;
+					allElecs [e].GetComponent<ElectrodeScript> ().g = 1;
+					allElecs [e].GetComponent<ElectrodeScript> ().b = 0;
 					break;
 				}
 			}			
