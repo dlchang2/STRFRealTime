@@ -16,6 +16,7 @@ public class TextChanger : MonoBehaviour {
 	int[] phonemeSelectivity;
 	int[] sigElecs; 
 	private Vector3 scaleFactor;
+	int toggleElecKey = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -36,22 +37,34 @@ public class TextChanger : MonoBehaviour {
 				allElecs [e] = (GameObject)Instantiate (prefab, pos, Quaternion.identity);
 				switch (phonemeSelectivity [e]) {
 				case 1: 
-					allElecs [e].GetComponent<ElectrodeScript> ().r = 1; allElecs [e].GetComponent<ElectrodeScript> ().g = 0; allElecs [e].GetComponent<ElectrodeScript> ().b = 0;
+					allElecs [e].GetComponent<ElectrodeScript> ().r = 1;
+					allElecs [e].GetComponent<ElectrodeScript> ().g = 0;
+					allElecs [e].GetComponent<ElectrodeScript> ().b = 0;
 					break;
 				case 2: 
-					allElecs [e].GetComponent<ElectrodeScript> ().r = 0; allElecs [e].GetComponent<ElectrodeScript> ().g = 0; allElecs [e].GetComponent<ElectrodeScript> ().b = 1;
+					allElecs [e].GetComponent<ElectrodeScript> ().r = 0;
+					allElecs [e].GetComponent<ElectrodeScript> ().g = 0;
+					allElecs [e].GetComponent<ElectrodeScript> ().b = 1;
 					break;
 				case 3: 
-					allElecs [e].GetComponent<ElectrodeScript> ().r = 0; allElecs [e].GetComponent<ElectrodeScript> ().g = 1; allElecs [e].GetComponent<ElectrodeScript> ().b = 0;
+					allElecs [e].GetComponent<ElectrodeScript> ().r = 0;
+					allElecs [e].GetComponent<ElectrodeScript> ().g = 1;
+					allElecs [e].GetComponent<ElectrodeScript> ().b = 0;
 					break;
 				case 4: 
-					allElecs [e].GetComponent<ElectrodeScript> ().r = 0; allElecs [e].GetComponent<ElectrodeScript> ().g = 0; allElecs [e].GetComponent<ElectrodeScript> ().b = 1;
+					allElecs [e].GetComponent<ElectrodeScript> ().r = 0;
+					allElecs [e].GetComponent<ElectrodeScript> ().g = 0;
+					allElecs [e].GetComponent<ElectrodeScript> ().b = 1;
 					break;
 				case 5: 
-					allElecs [e].GetComponent<ElectrodeScript> ().r = 1; allElecs [e].GetComponent<ElectrodeScript> ().g = 1; allElecs [e].GetComponent<ElectrodeScript> ().b = 0;
+					allElecs [e].GetComponent<ElectrodeScript> ().r = 1;
+					allElecs [e].GetComponent<ElectrodeScript> ().g = 1;
+					allElecs [e].GetComponent<ElectrodeScript> ().b = 0;
 					break;
 				case 6: 
-					allElecs [e].GetComponent<ElectrodeScript> ().r = 1; allElecs [e].GetComponent<ElectrodeScript> ().g = 0; allElecs [e].GetComponent<ElectrodeScript> ().b = 1;
+					allElecs [e].GetComponent<ElectrodeScript> ().r = 1;
+					allElecs [e].GetComponent<ElectrodeScript> ().g = 0;
+					allElecs [e].GetComponent<ElectrodeScript> ().b = 1;
 					break;
 				}
 			}			
@@ -85,6 +98,17 @@ public class TextChanger : MonoBehaviour {
 		string[] floatStrings = s.Split (',');
 		for (int i = 0; i < 256; i++) {
 			erps [i] = float.Parse (floatStrings [i]);
+		}
+	}
+
+	void toggleElectrodes(string elecKey, string info){
+		toggleElecKey = int.Parse (info.Substring(0,1));
+		bool onOrOff = bool.Parse (info.Substring(1,info.Length));
+
+		for (int e = 0; e < 256; e++) {
+			if (sigElecs == 1 && ((phonemeSelectivity [e] == toggleElecKey) || (toggleElecKey==0))) {
+				allElecs [e].SetActive (onOrOff);
+			}
 		}
 	}
 

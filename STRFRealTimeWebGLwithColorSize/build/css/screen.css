@@ -325,7 +325,7 @@ body,
 html {
     color: #000;
     font-family: Roboto, sans-serif;
-    background-color: #141414
+    background-color: #000000; /*#141414*/
 }
 #iosButton {
     position: fixed;
@@ -342,7 +342,7 @@ html {
     /*min-height: 100px;*/
     z-index: 100;
     white-space: nowrap;
-    background-color: #141414;
+    background-color: #000000;/*#141414;*/
     padding-left: 2rem;
     padding-top: 1.3rem;
     padding-bottom: 1.3rem;
@@ -557,19 +557,40 @@ canvas {
 #introscreen p, ul, li {
     font-size: 18px;
     font-family: Maven Pro;
+    line-height: 30px;
+
 }
 #introscreen a {
     color: #777777;
 }
 #about {
-    font-size: 50px;
+    font-size: 35px;
     cursor: pointer;
-    color:#FFFFFF;
+    color:#222222;
+    float: right; 
+    padding-bottom:15px;
+}
+
+#logo{
+    float: left;
+    left:0%;
+    height:75px;
+    width:auto;
+    position:absolute;
+    top:-3px;
 }
 #title-banner{
-    font-size: 50px;
+    padding-top:18px;
+    font-size: 30px;
+    letter-spacing:25px;
     white-space: nowrap;
-    color: #666666;
+    color: #333333;
     font-family: Maven Pro;
     text-align:center;
+    background-color: #FFFFFF;
+    height:70px;
+    font-weight:900;
+}
+#toggler{
+    color:#FFFFFF;
 }

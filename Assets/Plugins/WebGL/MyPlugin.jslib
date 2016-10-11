@@ -5,7 +5,7 @@ var MyPlugin = {
 	},
 	debugPrint: function(s){
 		console.log(s);
-	}
+	},
 };
 
 mergeInto(LibraryManager.library, MyPlugin);

@@ -808,7 +808,7 @@
                 E = 0,
                 T = 0;
             AnalyserView = function(e) {
-                this.analysisType = b, this.sonogram3DWidth = 256, this.sonogram3DHeight = 256, this.sonogram3DGeometrySize = 9.5, this.freqByteData = 0, this.texture = 0, this.TEXTURE_HEIGHT = 256, this.yoffset = 0, this.frequencyShader = 0, this.waveformShader = 0, this.sonogramShader = 0, this.sonogram3DShader = 0, this.backgroundColor = [.08, .08, .08, 1], this.foregroundColor = [0, .7, 0, 1], this.canvas = e, this.initGL()
+                this.analysisType = b, this.sonogram3DWidth = 256, this.sonogram3DHeight = 256, this.sonogram3DGeometrySize = 9.5, this.freqByteData = 0, this.texture = 0, this.TEXTURE_HEIGHT = 256, this.yoffset = 0, this.frequencyShader = 0, this.waveformShader = 0, this.sonogramShader = 0, this.sonogram3DShader = 0, this.backgroundColor = [.0, .0, .0, 1], this.foregroundColor = [0, .7, 0, 1], this.canvas = e, this.initGL()
             }, AnalyserView.prototype.getAvailableContext = function(e, t) {
                 if (e.getContext)
                     for (var n = 0; n < t.length; ++n) try {
