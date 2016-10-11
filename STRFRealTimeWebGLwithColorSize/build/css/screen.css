@@ -399,17 +399,18 @@ canvas {
 }
 
 #legend{position:absolute;
-    display: block
-    top: 500px;}
+    display: block;
+    top: 375px;}
 
 #spectrogram{ /*was canvas*/
     /*bottom: 11.8rem;*/
     position:relative;
-    top: 500px;
+    top: 375px;
     left: 0;
     height: 300px; /*30%;*//*calc(100% - 11.8rem);*/
     padding-top:10px;
     margin-top:20px;
+    min-width:700px;
 }
 .music-box__tool-tip {
     position: fixed;
@@ -577,7 +578,7 @@ canvas {
     height:75px;
     width:auto;
     position:absolute;
-    top:-3px;
+    top:-2.5px;
 }
 #title-banner{
     padding-top:18px;
@@ -593,4 +594,8 @@ canvas {
 }
 #toggler{
     color:#FFFFFF;
+  /*  margin-top:100px;
+    margin-left:150px;
+    line-height:20px;
+    font-size:15px;*/
 }

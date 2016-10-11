@@ -101,12 +101,12 @@ public class TextChanger : MonoBehaviour {
 		}
 	}
 
-	void toggleElectrodes(string elecKey, string info){
+	void toggleElectrodes(string info){
 		toggleElecKey = int.Parse (info.Substring(0,1));
-		bool onOrOff = bool.Parse (info.Substring(1,info.Length));
+		bool onOrOff = bool.Parse (info.Substring(1));
 
 		for (int e = 0; e < 256; e++) {
-			if (sigElecs == 1 && ((phonemeSelectivity [e] == toggleElecKey) || (toggleElecKey==0))) {
+			if (sigElecs[e] == 1 && ((phonemeSelectivity [e] == toggleElecKey) || (toggleElecKey==0))) {
 				allElecs [e].SetActive (onOrOff);
 			}
 		}

@@ -876,18 +876,19 @@
                         break;
                     case w:
                     case b:
-                        var vowels = [ 3,4,6,7, 9  ,  15   , 33  ,  40  ,  42  ,  43  ,  49  ,  52   , 53  ,  55  ,  56  ,  57  ,  60   , 63  ,  66  ,  70 ,   72  ,  77   , 99 ,  116 , 118 ,  132  , 133 ,  134  , 148 ,  151 ,  152   ,211 ,  213  , 227 ,  228  , 229 ,  249];
-                        var glides = [ 41  ,  46  ,  79  ,  96  , 139 ,  140 ,  159  , 175 ,  176  , 210   ,221 ,  225  , 236 ,  241  , 255];
-                        var fricatives = [5   , 17    ,21  ,  25 ,   26  ,  54  ,  84 ,   90 ,  128 ,  144 ,  170,   196];
-                        var unvoicedPlosives = [14,20,22,47  , 50  ,  67   , 68   , 71  ,  87  , 102]
-                        var voicedPlosives = [19  ,  36   , 37    ,38   , 39   , 61   , 62    ,69    ,73  ,  85  ,  86   , 88  , 101 ,  103  , 111   ,112 ,  119 ,  149  , 150   ,164 ,  165 ,  167 ,  180   ,181];
-                        var nasals = [23  ,  24   ,135,   147 ,  251];
-                        var all = [  3,   4,   5,   6,   7,   8,   9,  14,  15,  17,  19,  20,  21, 22,  23,  24,  25,  26,  33,  36,  37,  38,  39,  40,  42,  43,47,  49,  50,  52,  53,  54,  55,  56,  57,  60,  61,  62,  63,66,  67,  68,  69,  70,  71,  72,  73,  77,  83,  84,  85,  86, 87,  88,  90,  99, 100, 101, 102, 103, 111, 112, 115, 116, 117,118, 119, 127, 128, 129, 131, 132, 133, 134, 135, 144, 147, 148,149, 150, 151, 152, 164, 165, 166, 167, 170, 180, 181, 182, 196,197, 198, 211, 212, 213, 227, 228, 229, 249, 250, 251];
+                        // var vowels = [ 3,4,6,7, 9  ,  15   , 33  ,  40  ,  42  ,  43  ,  49  ,  52   , 53  ,  55  ,  56  ,  57  ,  60   , 63  ,  66  ,  70 ,   72  ,  77   , 99 ,  116 , 118 ,  132  , 133 ,  134  , 148 ,  151 ,  152   ,211 ,  213  , 227 ,  228  , 229 ,  249];
+                        // var glides = [ 41  ,  46  ,  79  ,  96  , 139 ,  140 ,  159  , 175 ,  176  , 210   ,221 ,  225  , 236 ,  241  , 255];
+                        // var fricatives = [5   , 17    ,21  ,  25 ,   26  ,  54  ,  84 ,   90 ,  128 ,  144 ,  170,   196];
+                        // var unvoicedPlosives = [14,20,22,47  , 50  ,  67   , 68   , 71  ,  87  , 102]
+                        // var voicedPlosives = [19  ,  36   , 37    ,38   , 39   , 61   , 62    ,69    ,73  ,  85  ,  86   , 88  , 101 ,  103  , 111   ,112 ,  119 ,  149  , 150   ,164 ,  165 ,  167 ,  180   ,181];
+                        // var nasals = [23  ,  24   ,135,   147 ,  251];
+                        // var all = [  3,   4,   5,   6,   7,   8,   9,  14,  15,  17,  19,  20,  21, 22,  23,  24,  25,  26,  33,  36,  37,  38,  39,  40,  42,  43,47,  49,  50,  52,  53,  54,  55,  56,  57,  60,  61,  62,  63,66,  67,  68,  69,  70,  71,  72,  73,  77,  83,  84,  85,  86, 87,  88,  90,  99, 100, 101, 102, 103, 111, 112, 115, 116, 117,118, 119, 127, 128, 129, 131, 132, 133, 134, 135, 144, 147, 148,149, 150, 151, 152, 164, 165, 166, 167, 170, 180, 181, 182, 196,197, 198, 211, 212, 213, 227, 228, 229, 249, 250, 251];
+                        var all = [4,5,6,20,21,22,23,36,37,38,39,52,53,54,55,68,69,70,71,72,84,85,86,87,99,100,101,102,115,116,117,127,132,133,143,147,149,150,165,181,196];
                         selectedCategory = all;
-                        selectedScaling = 0.005;
-                        for (this.analyser.smoothingTimeConstant = 0,this.analyser.getByteFrequencyData(freqByteData), i = 0; i < 36; i++) freqDataBuffer[i + 1] = freqDataBuffer[0];
+                        selectedScaling = 0.01;
+                        for (this.analyser.smoothingTimeConstant = 0.05,this.analyser.getByteFrequencyData(freqByteData), i = 0; i < 36; i++) freqDataBuffer[i + 1] = freqDataBuffer[0];
                         for (freqDataBuffer[0] = freqByteData, c = 0; c < selectedCategory.length; c++) {
-                            channelNum = selectedCategory[c]-1;
+                            channelNum = selectedCategory[c];//-1;
                             for (gridResponse[channelNum] = 0, t = 0; t < 37; t++)
                                 for (f = 0; f < 185; f++) gridResponse[channelNum] += freqDataBuffer[t][f] * channelStrfs[channelNum][t][f];
                                 gridResponse[channelNum] = selectedScaling*gridResponse[channelNum];
@@ -1121,7 +1122,7 @@
                     onResize_: function() {
                         //console.log("onResize_");
                         var e = $("#spectrogram")[0];
-                        g.canvas = e, e.width = $(window).width(), e.height = 510;//$(window).height();
+                        g.canvas = e, e.width = Math.max($(window).width(),800), e.height = 510;//$(window).height();
                         var t = $("#legend")[0];
                         t.width = $(window).width(), t.height = $(window).height() - 158, g.drawLegend_();
 
@@ -1147,8 +1148,8 @@
                     drawLegend_: function() {
                         var e = $("#legend")[0],
                             t = e.getContext("2d"),
-                            n = e.width - 10,
-                            fixed = 500;
+                            n = e.width - 15,
+                            fixed = 520; //this seems arbitrary
 
                         t.fillStyle = "#FFFFFF", t.font = "14px Roboto", t.textAlign = "right", t.textBaseline = "middle", t.fillText("20,000 Hz -", n, fixed - g.freqToY(2e4)), t.fillText("2,000 Hz -", n, fixed - g.freqToY(2e3)), t.fillText("200 Hz -", n, fixed - g.freqToY(200)), t.fillText("20 Hz -", n, fixed - g.freqToY(20))
                     },

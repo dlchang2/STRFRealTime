@@ -22,7 +22,7 @@
         });
 
         /*For checkboxes that select type of elec*/
-        function toggleElec(keyNum,cb){console.log("clicked," + keyNum + " "+cb.checked);SendMessage("Main Camera","toggleElectrodes",keyNum+cb.checked);}
+        function toggleElec(keyNum,cb){console.log("clicked," + keyNum + " "+cb.checked);keyNumString = keyNum.toString(); SendMessage("Main Camera","toggleElectrodes",keyNumString+cb.checked);}
       </script>
    </head>
    <div class="wrap">
@@ -74,6 +74,7 @@ NeuroSpeech Player
 </div>
 
 <div id="toggler">
+  select electrode type<br>
   <label><input type="checkbox" id="cbox0" value="zeroth_checkbox" onclick="toggleElec(0,this)"> all</label><br>
   <label><input type="checkbox" id="cbox1" value="first_checkbox" onclick="toggleElec(1,this)"> Vowels</label><br>
   <label><input type="checkbox" id="cbox2" value="second_checkbox" onclick="toggleElec(2,this)"> Fricatives</label><br>
