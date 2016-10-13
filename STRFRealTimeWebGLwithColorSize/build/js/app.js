@@ -855,7 +855,7 @@
                     n = this.TEXTURE_HEIGHT;
                 if (!this.freqByteData || this.freqByteData.length != this.analyser.frequencyBinCount) {
                     for (freqDataBuffer = [], i = 0; i < 37; i++) freqDataBuffer[i] = new Uint8Array(this.analyser.frequencyBinCount);
-                    strfRequest = new XMLHttpRequest, strfRequest.open("GET", "https://dl.dropboxusercontent.com/u/88928303/STRFMatNoEdge.bin", !0), strfRequest.responseType = "arraybuffer", strfRequest.onload = function(e) {}, strfRequest.addEventListener("load", function(e) {
+                    strfRequest = new XMLHttpRequest, strfRequest.open("GET", "https://dl.dropboxusercontent.com/u/88928303/STRFmatScaled.bin", !0), strfRequest.responseType = "arraybuffer", strfRequest.onload = function(e) {}, strfRequest.addEventListener("load", function(e) {
                         for (rawStrfs = new Float32Array(strfRequest.response), channelStrfs = [], c = 0; c < 256; c++)
                             for (channelStrfs[c] = [], t = 0; t < 37; t++)
                                 for (channelStrfs[c][t] = new Float32Array(185), f = 0; f < 185; f++) channelStrfs[c][t][f] += rawStrfs[c + 256 * t + 9472 * f]
@@ -884,14 +884,15 @@
                         // var nasals = [23  ,  24   ,135,   147 ,  251];
                         // var all = [  3,   4,   5,   6,   7,   8,   9,  14,  15,  17,  19,  20,  21, 22,  23,  24,  25,  26,  33,  36,  37,  38,  39,  40,  42,  43,47,  49,  50,  52,  53,  54,  55,  56,  57,  60,  61,  62,  63,66,  67,  68,  69,  70,  71,  72,  73,  77,  83,  84,  85,  86, 87,  88,  90,  99, 100, 101, 102, 103, 111, 112, 115, 116, 117,118, 119, 127, 128, 129, 131, 132, 133, 134, 135, 144, 147, 148,149, 150, 151, 152, 164, 165, 166, 167, 170, 180, 181, 182, 196,197, 198, 211, 212, 213, 227, 228, 229, 249, 250, 251];
                         var all = [4,5,6,20,21,22,23,36,37,38,39,52,53,54,55,68,69,70,71,72,84,85,86,87,99,100,101,102,115,116,117,127,132,133,143,147,149,150,165,181,196];
+                        //above is zero indexed
                         selectedCategory = all;
-                        selectedScaling = 0.01;
+                        selectedScaling = 0.03;
                         for (this.analyser.smoothingTimeConstant = 0.05,this.analyser.getByteFrequencyData(freqByteData), i = 0; i < 36; i++) freqDataBuffer[i + 1] = freqDataBuffer[0];
                         for (freqDataBuffer[0] = freqByteData, c = 0; c < selectedCategory.length; c++) {
-                            channelNum = selectedCategory[c];//-1;
+                            channelNum = selectedCategory[c];
                             for (gridResponse[channelNum] = 0, t = 0; t < 37; t++)
                                 for (f = 0; f < 185; f++) gridResponse[channelNum] += freqDataBuffer[t][f] * channelStrfs[channelNum][t][f];
-                                gridResponse[channelNum] = selectedScaling*gridResponse[channelNum];
+                                gridResponse[channelNum] = Math.min(1.5,selectedScaling*gridResponse[channelNum]);
                         }
                         break;
                     case v:

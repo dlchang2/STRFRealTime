@@ -8,7 +8,7 @@
       <link rel="shortcut icon" href="favicon.ico?v=2">
       <title>Real Time STRF Visualization</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <link rel="stylesheet" href="../TemplateData/style.css">
+      <link rel="stylesheet" href="../TemplateData/styleToUse.css">
       <link rel="shortcut icon" href="favicon.ico" />
       <script src="UnityProgress.js"></script>
       <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
@@ -76,13 +76,12 @@
 
 <div id="toggler">
   select electrode type<br>
-  <label><input type="checkbox" id="cbox0" value="zeroth_checkbox" onclick="toggleElec(0,this)"> all</label><br>
-  <label><input type="checkbox" id="cbox1" value="first_checkbox" onclick="toggleElec(1,this)"> Vowels</label><br>
-  <label><input type="checkbox" id="cbox2" value="second_checkbox" onclick="toggleElec(2,this)"> Fricatives</label><br>
-  <label><input type="checkbox" id="cbox3" value="third_checkbox" onclick="toggleElec(3,this)"> Nasals</label><br>
-  <label><input type="checkbox" id="cbox4" value="fourth_checkbox" onclick="toggleElec(4,this)"> Voiced Plosives</label><br>
-  <label><input type="checkbox" id="cbox5" value="fifth_checkbox" onclick="toggleElec(5,this)"> Unvoiced Plosives</label><br>
-  <label><input type="checkbox" id="cbox6" value="sixth_checkbox" onclick="toggleElec(6,this)"> Liquids and Glides</label><br>
+<label><input type="checkbox" id="cbox1" value="first_checkbox" onclick="toggleElec(0,this)" checked> <span style="color:red;">Vowels</span></label><br>
+  <label><input type="checkbox" id="cbox2" value="second_checkbox" onclick="toggleElec(1,this)" checked> <span style="color:#0000FF">Liquids and Glides</span></label><br>
+  <label><input type="checkbox" id="cbox3" value="third_checkbox" onclick="toggleElec(2,this)" checked> <span style="color:#00FF00;">Fricatives</span></label><br>
+  <label><input type="checkbox" id="cbox4" value="fourth_checkbox" onclick="toggleElec(3,this)" checked> <span style="color:#FF00FF;">Unvoiced Plosives</span></label><br>
+  <label><input type="checkbox" id="cbox5" value="fifth_checkbox" onclick="toggleElec(4,this)" checked> <span style="color:yellow;">Voiced Plosives</span></label><br>
+  <label><input type="checkbox" id="cbox6" value="sixth_checkbox" onclick="toggleElec(5,this)" checked> <span style="color:cyan;">Nasals</span></label><br>
 </div>
 
  <canvas id="spectrogram"></canvas></div>

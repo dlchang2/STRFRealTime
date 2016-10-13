@@ -348,7 +348,6 @@ html {
     padding-bottom: 1.3rem;
     width: 100%;
     text-align: center;
-    overflow-x: scroll
 }
 .music-box__buttons__button {
     background-color: #333;
@@ -559,8 +558,8 @@ canvas {
     font-size: 14px;
     font-family: Maven Pro;
     line-height: 22px;
-
 }
+
 #introscreen a {
     color: #777777;
 }
@@ -574,7 +573,7 @@ canvas {
 
 #logo{
     float: left;
-    left:0%;
+    left:10px;
     height:75px;
     width:auto;
     position:absolute;
@@ -594,8 +593,8 @@ canvas {
 }
 #toggler{
     color:#FFFFFF;
-  /*  margin-top:100px;
-    margin-left:150px;
-    line-height:20px;
-    font-size:15px;*/
+    margin-top:30px;
+    margin-left:40px;
+    line-height:15px;
+    font-size:10px;
 }
